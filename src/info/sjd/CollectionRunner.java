@@ -5,10 +5,7 @@ import info.sjd.model.Shape;
 import info.sjd.model.Square;
 import info.sjd.model.Treangle;
 
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class CollectionRunner {
@@ -39,21 +36,47 @@ public class CollectionRunner {
         shapeQueue.add(treangle);
 
         logger.info("Queue has size " + shapeQueue.size());
-
-        Shape firstElement = shapeQueue.peek();
-        logger.info("The first element is " + firstElement.getClass().getSimpleName() + " and has area " + firstElement.getArea());
-
-        firstElement = shapeQueue.poll();
-        logger.info("The first element is " + firstElement.getClass().getSimpleName() + " and has area " + firstElement.getArea());
-
-        firstElement = shapeQueue.peek();
-        logger.info("The first element is " + firstElement.getClass().getSimpleName() + " and has area " + firstElement.getArea());
-        logger.info("Queue has size " + shapeQueue.size());
+//
+//        Shape firstElement = shapeQueue.peek();
+//        logger.info("The first element is " + firstElement.getClass().getSimpleName() + " and has area " + firstElement.getArea());
+//
+//        firstElement = shapeQueue.poll();
+//        logger.info("The first element is " + firstElement.getClass().getSimpleName() + " and has area " + firstElement.getArea());
+//
+//        firstElement = shapeQueue.peek();
+//        logger.info("The first element is " + firstElement.getClass().getSimpleName() + " and has area " + firstElement.getArea());
+//        logger.info("Queue has size " + shapeQueue.size());
 
 //        Set
 
+        Set<Shape> shapeSet = new HashSet(shapeQueue);
+        logger.info("Set has size " + shapeSet.size());
 
 
 //        List
+
+        List<Shape> shapeList = new LinkedList<>(shapeQueue);
+        logger.info("List has size " + shapeList.size());
+
+        Shape maxShape = getMaxShape(shapeList);
+        Shape minShape = getMinShape(shapeList);
+
+    }
+
+    static Shape getMinShape(List<Shape> shapeList) {
+        if (shapeList.isEmpty()){
+            return null;
+        }
+        Shape minShape = shapeList.get(0);
+        for (Shape shape :shapeList) {
+            if (minShape.getArea() > shape.getArea()){
+                minShape = shape;
+            }
+        }
+        return minShape;
+    }
+
+    static Shape getMaxShape(List<Shape> shapeList) {
+        return null;
     }
 }
