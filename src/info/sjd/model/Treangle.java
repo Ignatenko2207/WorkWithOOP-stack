@@ -39,6 +39,6 @@ public class Treangle extends AbstractShape {
     }
 
     public void getInfo() {
-        logger.info("triangle with base:" + base + " , heigth:" + heigth);
+        logger.info("Triangle with base:" + base + " , heigth:" + heigth);
     }
 }

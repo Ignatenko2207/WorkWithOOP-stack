@@ -36,8 +36,36 @@ public class ApplicationRunner {
             if (maxShape.getArea() < shapes[i].getArea()){
                 maxShape = shapes[i];
             }
-            logger.info("Max shape has area " + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
         }
+        logger.info("Max shape has area " + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+
+        maxShape = shapes[0];
+
+        for (Shape shape : shapes) {
+           if (maxShape.getArea() < shape.getArea()){
+               maxShape = shape;
+           }
+        }
+        logger.info("Max shape has area " + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
+
+        maxShape = shapes[0];
+        int i = 0;
+        while (i < shapes.length){
+            if (maxShape.getArea() < shapes[i].getArea()){
+                maxShape = shapes[i];
+            }
+            i++;
+        }
+
+
+        maxShape = shapes[0];
+        i = 0;
+        do {
+            if (maxShape.getArea() < shapes[i].getArea()){
+                maxShape = shapes[i];
+            }
+            i++;
+        } while (i < shapes.length);
 
 
     }
