@@ -1,5 +1,5 @@
 package info.sjd.model;
 
-public abstract class AbstractShape implements Shape{
+public abstract class AbstractShape implements Shape, Comparable<Shape>{
 
 }

@@ -2,7 +2,7 @@ package info.sjd.model;
 
 import java.io.Serializable;
 
-public class Square extends AbstractShape implements Shape, Serializable {
+public class Square extends AbstractShape{
 
     private double side;
 
@@ -24,5 +24,10 @@ public class Square extends AbstractShape implements Shape, Serializable {
     @Override
     public double getArea() {
         return side*side;
+    }
+
+    @Override
+    public int compareTo(Shape shape) {
+        return 0;
     }
 }

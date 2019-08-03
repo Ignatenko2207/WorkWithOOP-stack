@@ -56,7 +56,7 @@ public class ApplicationRunner {
             }
             i++;
         }
-
+        logger.info("Max shape has area " + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
 
         maxShape = shapes[0];
         i = 0;
@@ -66,7 +66,7 @@ public class ApplicationRunner {
             }
             i++;
         } while (i < shapes.length);
-
+        logger.info("Max shape has area " + maxShape.getArea() + " and is " + maxShape.getClass().getSimpleName());
 
     }
 }

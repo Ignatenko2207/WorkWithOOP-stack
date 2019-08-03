@@ -41,4 +41,9 @@ public class Treangle extends AbstractShape {
     public void getInfo() {
         logger.info("Triangle with base:" + base + " , heigth:" + heigth);
     }
+
+    @Override
+    public int compareTo(Shape shape) {
+        return 0;
+    }
 }
