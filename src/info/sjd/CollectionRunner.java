@@ -77,6 +77,15 @@ public class CollectionRunner {
     }
 
     static Shape getMaxShape(List<Shape> shapeList) {
-        return null;
+        if (shapeList.isEmpty()){
+            return null;
+        }
+        Shape maxShape = shapeList.get(0);
+        for (Shape shape :shapeList) {
+            if (maxShape.getArea() < shape.getArea()){
+                maxShape = shape;
+            }
+        }
+        return maxShape;
     }
 }

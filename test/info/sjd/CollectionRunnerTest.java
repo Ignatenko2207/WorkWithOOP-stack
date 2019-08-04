@@ -32,7 +32,22 @@ class CollectionRunnerTest {
         assertEquals("Square", minShape.getClass().getSimpleName());
     }
 
-//    @Test
+    @Test
     void getMaxShape() {
+        Shape square = new Square(10);
+        Shape circle = new Circle(10);
+        Shape treangle = new Treangle(115, 90);
+        List<Shape> shapes = new ArrayList<>();
+        Shape maxShape = CollectionRunner.getMinShape(shapes);
+        assertNull(maxShape);
+
+        shapes.add(square);
+        shapes.add(circle);
+        shapes.add(treangle);
+
+        maxShape = CollectionRunner.getMaxShape(shapes);
+
+        assertNotNull(maxShape);
+        assertEquals("Treangle", maxShape.getClass().getSimpleName());
     }
 }
